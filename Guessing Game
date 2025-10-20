@@ -1,0 +1,29 @@
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+int main()
+{
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(1, 100); 
+
+    int Num = dist(gen);
+    int Guess = 0;
+    
+    //cout<<Num <<"\n";
+    
+    
+    while(Guess != Num)
+    {
+        cout<<"Guess 1 - 100\n";
+        cin >> Guess;
+        if(Guess < Num) cout<<"Higher\n";
+        if(Guess > Num) cout<<"Lower\n";
+        
+    }
+    cout<<"Nice\n";
+
+    return 0;
+}
